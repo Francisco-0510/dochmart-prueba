@@ -1,0 +1,6 @@
+<h2>Reservas Anteriores</h2>
+<div *ngFor="let reservation of reservations">
+  <p>Fecha: {{ reservation.date }}</p>
+  <p>Horario: {{ reservation.time }}</p>
+  <p>Usuario: {{ reservation.userData.name }}</p>
+</div>

@@ -1,0 +1,6 @@
+<mat-calendar (selectedChange)="onDateSelected($event)"></mat-calendar>
+<div *ngFor="let day of days">
+  <span [ngStyle]="{'color': day.status === 'D' ? 'green' : 'red'}">
+    {{ day.date }}
+  </span>
+</div>

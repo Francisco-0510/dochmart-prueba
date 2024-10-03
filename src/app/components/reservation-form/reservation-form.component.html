@@ -1,0 +1,21 @@
+<h2>Selecciona un horario para el {{ selectedDate }}</h2>
+<div *ngFor="let time of availableTimes">
+  <span [ngClass]="{'available': time.status === 'D', 'occupied': time.status === 'O'}">
+    {{ time.hour }}
+  </span>
+</div>
+<form (ngSubmit)="submitForm()">
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]="userData.name" name="name" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="userData.email" name="email" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Teléfono</mat-label>
+    <input matInput [(ngModel)]="userData.phone" name="phone" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Reservar</button>
+</form>
